@@ -155,13 +155,16 @@ namespace Content.Client.Viewport
             _inputManager.ViewportKeyEvent(this, args);
         }
 
+
         protected override void Draw(IRenderHandle handle)
         {
             EnsureViewportCreated();
 
             DebugTools.AssertNotNull(_viewport);
 
-            _viewport!.Render();
+            RenderZLevels(_viewport!); // CrystallEdge Process multi-Z rendering
+
+            //_viewport!.Render();
 
             if (_queuedScreenshots.Count != 0)
             {
