@@ -166,11 +166,18 @@ namespace Content.Shared.Maps
         /// Is this tile immune to RCD deconstruct.
         /// </summary>
         [DataField("indestructible")] public bool Indestructible = false;
+   
+        /// <summary>
+        /// CrystallEdge: Vanilla tile filtering
+        /// </summary>
+        [DataField]
+        public bool EditorHidden { get; private set; } = true;
 
         /// <summary>
-        ///     Hide this tile in the tile placement editor.
+        /// CrystallEdge: used for lightning calculation through zlevels
         /// </summary>
-        [DataField] public bool EditorHidden { get; private set; } = false;
+        [DataField]
+        public bool Transparent = false;
 
         public void AssignTileId(ushort id)
         {
