@@ -170,7 +170,13 @@ namespace Content.Shared.Maps
         /// <summary>
         ///     Hide this tile in the tile placement editor.
         /// </summary>
-        [DataField] public bool EditorHidden { get; private set; } = false;
+                public bool EditorHidden { get; private set; } = true;
+
+        /// <summary>
+        /// CrystallEdge: used for lightning calculation through zlevels
+        /// </summary>
+        [DataField]
+        public bool Transparent = false;
 
         public void AssignTileId(ushort id)
         {
