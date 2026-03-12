@@ -14,6 +14,7 @@
   id: Space
   name: tiles-space
   friction: 0
+  transparent: true #CrystallEdge
   isSubfloor: true
   isSpace: true
   sturdy: false
